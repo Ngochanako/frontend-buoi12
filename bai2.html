@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: antiquewhite;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border-color: transparent;
+            margin: 20px;
+            font-weight: 700;
+        }
+        button:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="changeContent()" id="button">
+        OFF
+    </button>
+    <p id="content">Sau khi bấm vào nút nội dung sẽ thay đổi</p>
+    <script>
+        function changeContent(){
+            if(document.getElementById("button").innerHTML=="OFF"){
+                document.getElementById("button").innerHTML="ON"
+                document.getElementById("content").innerHTML="Khi ấn lần nữa nội dung quay về ban đầu";
+            } else{
+                document.getElementById("button").innerHTML="OFF"
+                document.getElementById("content").innerHTML="Sau khi bấm vào nút nội dung sẽ thay đổi";
+            }
+        }
+    </script>
+</body>
+</html>

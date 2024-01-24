@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input{
+            display: flex;
+            gap: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>Tính tổng a và b:</p>
+    <div  class="input">
+    <input type="number" name="a" id="a" placeholder="Nhập a">
+    <input type="number" name="b" id="b" placeholder="Nhập b">
+    </div>
+    <div class="input">
+        <button onclick="Sum()">Tính tổng</button>
+        <input type="text" name="sum" id="result"readonly placeholder="Kết quả">
+    </div>
+    <script>
+        function Sum(){
+            let a=parseFloat(document.getElementById("a").value);
+            let b=parseFloat(document.getElementById("b").value)
+           let number=a+b;
+           document.getElementById("result").value=number;
+        }
+    </script>
+</body>
+</html>

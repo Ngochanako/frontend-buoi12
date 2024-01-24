@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input, div {
+      margin: 10px;
+    }
+  </style>
+  <title>Input Display</title>
+</head>
+<body>
+
+  <label for="textInput">Nhập nội dung:</label>
+  <input type="text" id="textInput">
+
+  <h3>Sử dụng sự kiện input:</h3>
+  <div id="displayInput1"></div>
+
+  <h3>Sử dụng sự kiện change:</h3>
+  <div id="displayInput2"></div>
+
+  <script>
+    // Sử dụng sự kiện input
+    document.getElementById('textInput').addEventListener('input', function() {
+      var inputValue = this.value;
+      document.getElementById('displayInput1').textContent = inputValue;
+    });
+
+    // Sử dụng sự kiện change
+    document.getElementById('textInput').addEventListener('change', function() {
+      var inputValue = this.value;
+      document.getElementById('displayInput2').textContent = inputValue;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- //  <form action=""> -->
+    <h1>Student Management</h1>
+    <label for="id">Student Id</label>
+    <input required type="text" name="id" id="id">
+    <br><br>
+    <label for="name">Student Name</label>
+    <input required type="text"name="name" id="name">
+    <br><br>
+    <label for="age">Age</label>
+    <input required type="number" name="age" id="age">
+    <br><br>
+    <label for="phone">Phone</label>
+    <input required type="text" name="phone" id="phone">
+    <br><br>
+    <label for="email">Email</label>
+    <input required type="email" name="email" id="email">
+    <br><br>
+    <button id="button">Create</button>
+    <br>
+<!-- //</form> -->
+    <p id="InfoStudent"></p>
+    <script>
+        document.getElementById("button").addEventListener("click",createInfo);
+        function createInfo(){
+            let id=document.getElementById("id").value;
+            let age=parseInt(document.getElementById("age").value);
+            let phone=document.getElementById("phone").value;
+            var phoneRegex = /^(032|033|034|035|036|037|038|039|096|097|098|086|083|084|085|081|082|088|091|094|070|079|077|076|078|090|093|089|056|058|092|059|099)[0-9]{7}$/;
+            let name=document.getElementById("name").value;
+            let email=document.getElementById("email").value;
+            let emailRegex=/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*/$/;
+            if(id.length!==6){
+                alert("id phải có 6 ký tự");
+                return;
+            }
+            if(name==""){
+                alert("Tên không được để trống");
+                return;
+            }
+            if(age<18){
+                alert("tuổi phải lớn hơn 18");
+                return;
+            }
+            if(!phone.match(phoneRegex)){
+                alert("Số điện thoại phải là ở việt nam");
+                return;
+            }
+            if(!email.match(emailRegex)){
+                alert("email không đúng định dạng");
+                return;
+            }
+         //   document.getElementById("InfoStudent").innerHTML=id;
+         document.getElementById("InfoStudent").innerHTML="Id: "+ id +" Student Name: "+name+ " Age: "+age+ " Phone: "+ phone+" Email: "+email;
+        }
+    </script>
+</body>
+   
+</html>

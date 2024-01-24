@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+           box-sizing: border-box;
+        }
+         .main{
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+         }
+         .your_answer{
+            display: flex;
+            gap: 10px;
+         }
+         button{
+            width: 100px;
+            background-color: greenyellow;
+            padding: 5px;
+            border-radius: 5px;
+            border-color: transparent;
+         }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="your_answer">Your answer
+            <div><input type="text" id="inputValue"></div>
+        </div>
+        <button onclick="answer()">Answer</button>
+        <p id="notice"></p>
+    </div>
+    <script>
+        function answer(){
+            var inputValue=document.getElementById("inputValue").value;       
+        if(inputValue.length>10){
+            document.getElementById("notice").innerHTML="Không hợp lệ"
+        } else{
+            document.getElementById("notice").innerHTML="Thành công"
+        } 
+    }  
+    </script>
+</body>
+</html>

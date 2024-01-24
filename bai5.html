@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .addItem{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        input{
+            background-color: yellow;
+            border-radius: 5px;
+            padding: 5px;
+            border-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create New Item</h1>
+    <br>
+    <div class="addItem">
+        <p>Item</p>
+        <input type="text" id="input">
+        <button onclick="addItem()">Add</button>
+    </div>
+    <ul>
+        <!-- <li>Nho mỹ</li>
+        <li>Táo tàu</li> -->
+    </ul>
+    <script>
+        let arr=["Nho mỹ","Táo tàu"];
+        let ulElement=document.createElement("ul");
+        document.body.append(ulElement);
+        displayItem();
+        function displayItem(){
+            ulElement.innerHTML="";
+            for(let x of arr){
+            let liElement=document.createElement("li");
+            liElement.innerHTML=x;
+            ulElement.appendChild(liElement);
+        }
+        }
+        function addItem(){
+            let inputItem=document.getElementById("input");
+            arr.push(inputItem.value);
+            console.log(arr)
+            displayItem();
+            inputItem.value="";
+            inputItem.style.backgroundColor="white";
+        }   
+    </script>
+</body>
+</html>
